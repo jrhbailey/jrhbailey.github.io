@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html><head>
+<meta charset="utf-8"/>
+<title>Schemes</title>
+<script src="jutil.js"></script>
+<script src="schemes.js"></script>
+
+<script>
+    function pgload() {scheme_draw();}
+</script>
+
+<style>
+  #canvas-cont {text-align: center;}
+
+  canvas {border: 1px solid black;}
+
+  #sch_text {font:bold 15px arial;
+   margin: auto;
+   padding: 10px;
+   text-align: center;
+  }
+
+</style>
+
+</head>
+<body onload="pgload();">
+<div id="canvas-cont">
+<canvas id="schemes" width="450" height="600"></canvas>
+</div>
+
+<p />
+<div id="sch_text"></div>
+
+</body></html>

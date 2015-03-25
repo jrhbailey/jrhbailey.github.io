@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html><head>
+	<meta charset="utf-8"/>
+	<title>Clocker</title>
+	<script src="jutil.js"></script>
+	<script src="clock.js"></script>
+
+	<script>
+    function pgload() {
+	  clk_time();
+	  setInterval(clk_time, 5000);
+	}
+	</script>
+	
+<style>
+  #canvas-cont {text-align: center;}
+
+  canvas {border: 1px solid black;}
+
+  #clk_text {font:bold 15px arial;
+   margin: auto;
+   padding: 10px;
+   text-align: center;
+  }
+
+</style>
+</head>
+  
+  <body onload="pgload();">
+	<div id="canvas-cont">
+
+	<canvas id="clock" width="500" height="350"></canvas>
+	</div>
+
+	<p />
+	<div id="clk_text"></div>
+
+  </body>
+</html>
+
+
+
+
+
+
