@@ -1,0 +1,77 @@
+<!-- 
+(load "gen-html.el")
+(load "gen-jscript.el")
+
+(find-file "~/proging/devl/web/clocker-2.html")
+(find-file "~/proging/devl/lisp/gen-jscript.el")
+(find-file "~/proging/devl/lisp/gen-html.el")
+
+Fri, Jun 10 2022:
+  todo: check in from command line
+  change ansers to native language
+
+ -->
+
+<!DOCTYPE HTML><html>
+  <head>
+	<meta charset="utf-8"/>
+	<title>Text Test</title>
+	<script>
+	  const lang_lst = ["Spanish", "Ukrainian", "Vietnamese"];
+	  const quest_lst = ["Hello", "See You Later", "Thank You", "You're Welcome"];
+
+	  const spa_answs = ["Hola", "Hasta Luego", "Gracias", "De Nada"];
+	  const spa_notes = ["", "", "Stutter-r", "Naa-daa"];
+
+	  const ukr_answs = ["Privit", "Do pobachennya", "Dyakoyu", "bood laska"];
+	  const ukr_notes = ["", "", "like double-u", ""];
+
+	  const vie_answs = ["Chao", "Hane map lie", "Caam Uun", "Kong caa chi"];
+	  const vie_notes = ["plus person's name or baa", "", "", ""];
+
+	  var quest_id = 0;
+	  var lang_id = 0;
+
+	  //set initial values
+	  function setupText() {
+		  // get random lang and question
+		  lang_id = Math.floor(Math.random() * lang_lst.length);
+		  quest_id = Math.floor(Math.random() * quest_lst.length);
+		  
+		  document.getElementById("lang").innerHTML = lang_lst[lang_id];
+		  document.getElementById("quest").innerHTML = quest_lst[quest_id];
+		  document.getElementById("answer").innerHTML = "Answer";		  
+		  document.getElementById("notes").innerHTML = "";		  
+		  // console.log(document.getElementById("quest").innerHTML);
+	  }
+	  function changeText() {
+		  if(lang_id == 0) {
+			  document.getElementById("answer").innerHTML = spa_answs[quest_id];
+			  document.getElementById("notes").innerHTML = spa_notes[quest_id];
+		  }
+		  if(lang_id == 1) {
+			  document.getElementById("answer").innerHTML = ukr_answs[quest_id];
+			  document.getElementById("notes").innerHTML = ukr_notes[quest_id];
+		  }
+
+		  if(lang_id == 2) {
+			  document.getElementById("answer").innerHTML = vie_answs[quest_id];
+			  document.getElementById("notes").innerHTML = vie_notes[quest_id];
+		  }
+		  
+	  }
+
+	</script>
+  </head>
+  <body onload="setupText();">
+	<div id="main">
+	  <p id="lang">English</p>
+	  <p id="quest">Hello</p>
+	  <button type="button" onclick="changeText();">Show Answer</button>
+	  <p id="answer">Answer</p>
+	  <p id="notes"></p>
+	  <p></p>
+	  <button type="button" onclick="setupText();">Reset</button>
+	</div>
+  </body>
+</html>
